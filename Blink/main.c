@@ -1,10 +1,3 @@
-/*
- * Blink.c
- *
- * Created: 5/22/2020 8:52:50 PM
- * Author : Aramayis Orkusyan
- */ 
-
 #include <avr/io.h>
 
 /* Scheduler include files. */
