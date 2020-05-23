@@ -18,7 +18,6 @@
 /* The period between LED state changes. */
 #define mainLED_BLINK_PERIOD ( ( TickType_t ) 1000 / portTICK_PERIOD_MS )
 
-
 /*
  * The task function to blink the LED.
  */
