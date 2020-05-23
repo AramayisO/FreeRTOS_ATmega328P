@@ -9,7 +9,7 @@
 #define mainBLINK_LED_TASK_PRIORITY ( tskIDLE_PRIORITY + 1 )
 
 /* The period between LED state changes. */
-#define mainLED_BLINK_PERIOD ( ( TickType_t ) 1000 / portTICK_PERIOD_MS )
+#define mainLED_BLINK_PERIOD ( ( TickType_t ) 500 / portTICK_PERIOD_MS )
 
 /*
  * The task function to blink the LED.
@@ -43,10 +43,11 @@ static void vBlinkLED( void *pvParameters )
 	/* The parameters are not used. */
 	( void ) pvParameters;
 	
+	DDRB |= ( 1 << PORTB5 );
+	
 	/* Cycle forever, turning the LED on then off. */
 	for ( ;; )
 	{
-		DDRB |= ( 1 << PORTB5 );
 		PORTB ^= ( 1 << PORTB5 );
 		vTaskDelay( mainLED_BLINK_PERIOD );
 	}
